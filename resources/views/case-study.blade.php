@@ -426,7 +426,7 @@
     <!-- ═══ CTA ═══ -->
     <section class="py-24">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-14 text-center relative overflow-hidden">
+        <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-6 sm:p-10 md:p-14 text-center relative overflow-hidden">
           <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
           <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
           <div class="relative z-10">

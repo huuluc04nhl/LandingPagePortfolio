@@ -158,19 +158,19 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
           </a>
           <a href="#contact" class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Liên hệ với mình</a>
         </div>
-        <div class="reveal d4 flex gap-8 mt-14 pt-8 border-t border-zinc-100 dark:border-zinc-900">
+        <div class="reveal d4 flex flex-wrap gap-x-8 gap-y-4 justify-between sm:justify-start mt-14 pt-8 border-t border-zinc-100 dark:border-zinc-900">
           <div><p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">5+</p><p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Dự án tiêu biểu</p></div>
           <div><p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">NCKH</p><p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Bán kết Euréka 2025</p></div>
           <div><p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">100%</p><p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Đam mê &amp; Tận tâm</p></div>
         </div>
       </div>
 
-      <div class="reveal d2 flex justify-center md:justify-end">
-        <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
+      <div class="reveal d2 flex justify-center md:justify-end w-full">
+        <div class="relative w-full max-w-[280px] sm:max-w-[320px] aspect-square md:w-80 md:h-80 lg:w-96 lg:h-96">
           <div class="pf w-full h-full rounded-3xl">
             <img src="{{ asset('images/avatar.jpg') }}" alt="Nguyễn Hữu Lực — IT Student & Web Developer" loading="eager">
           </div>
-          <div class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg">Tìm kiếm cơ hội Intern / Fresher</div>
+          <div class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-2xl shadow-lg">Tìm kiếm cơ hội Intern / Fresher</div>
         </div>
       </div>
 
@@ -255,14 +255,14 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
         </div>
         <div class="p-6">
           <div class="flex flex-wrap gap-2 mb-3">
-            <span class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full font-medium font-medium">Laravel</span>
+            <span class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full font-medium">Laravel</span>
             <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full font-medium">PHP / MySQL</span>
           </div>
-          <a href="{{ route('projects') }}?filter=laravel-php">
-            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">Skyline Cinema</h3>
+          <a href="{{ route('projects') }}?project=2">
+            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5 group-hover:text-accent transition-colors">Skyline Cinema</h3>
           </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Hệ thống quản lý rạp chiếu phim và đặt vé xem phim trực tuyến hiện đại với chọn ghế thời gian thực, quản lý suất chiếu và doanh thu trực quan.</p>
-          <a href="{{ route('projects') }}?filter=laravel-php" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Xem chi tiết dự án →</a>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4 line-clamp-3">Hệ thống quản lý rạp chiếu phim và đặt vé xem phim trực tuyến hiện đại với chọn ghế thời gian thực, quản lý suất chiếu và doanh thu trực quan.</p>
+          <a href="{{ route('projects') }}?project=2" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Xem chi tiết dự án →</a>
         </div>
       </article>
  
@@ -273,14 +273,14 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
         </div>
         <div class="p-6">
           <div class="flex flex-wrap gap-2 mb-3">
-            <span class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full font-medium font-medium">ASP.NET Core</span>
+            <span class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full font-medium">ASP.NET Core</span>
             <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full font-medium">SQL Server</span>
           </div>
-          <a href="{{ route('projects') }}?filter=csharp-asp">
-            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">CPL Hotel</h3>
+          <a href="{{ route('projects') }}?project=3">
+            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5 group-hover:text-accent transition-colors">CPL Hotel</h3>
           </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Website quản lý khách sạn thông minh tích hợp đặt phòng trực tuyến, quản lý hóa đơn dịch vụ và hỗ trợ chăm sóc khách hàng chuyên nghiệp.</p>
-          <a href="{{ route('projects') }}?filter=csharp-asp" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Xem chi tiết dự án →</a>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4 line-clamp-3">Website quản lý khách sạn thông minh tích hợp đặt phòng trực tuyến, quản lý hóa đơn dịch vụ và hỗ trợ chăm sóc khách hàng chuyên nghiệp.</p>
+          <a href="{{ route('projects') }}?project=3" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Xem chi tiết dự án →</a>
         </div>
       </article>
  
@@ -291,14 +291,14 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
         </div>
         <div class="p-6">
           <div class="flex flex-wrap gap-2 mb-3">
-            <span class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full font-medium font-medium">ASP.NET MVC</span>
+            <span class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full font-medium">ASP.NET MVC</span>
             <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full font-medium">C# / SQL Server</span>
           </div>
-          <a href="{{ route('projects') }}?filter=csharp-asp">
-            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">LeoWanVN</h3>
+          <a href="{{ route('projects') }}?project=4">
+            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5 group-hover:text-accent transition-colors">LeoWanVN</h3>
           </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Website thương mại điện tử bán hàng laptop và linh kiện máy tính, tích hợp giỏ hàng, bộ lọc thông số chi tiết và quy trình thanh toán tối ưu.</p>
-          <a href="{{ route('projects') }}?filter=csharp-asp" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Xem chi tiết dự án →</a>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4 line-clamp-3">Website thương mại điện tử bán hàng laptop và linh kiện máy tính, tích hợp giỏ hàng, bộ lọc thông số chi tiết và quy trình thanh toán tối ưu.</p>
+          <a href="{{ route('projects') }}?project=4" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Xem chi tiết dự án →</a>
         </div>
       </article>
  
@@ -309,14 +309,14 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
         </div>
         <div class="p-6">
           <div class="flex flex-wrap gap-2 mb-3">
-            <span class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full font-medium font-medium">PHP Thuần</span>
+            <span class="text-xs bg-blue-50 dark:bg-zinc-800 text-accent border border-blue-200 dark:border-zinc-700 px-3 py-1 rounded-full font-medium">PHP Thuần</span>
             <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full font-medium">MySQL</span>
           </div>
-          <a href="{{ route('projects') }}?filter=laravel-php">
-            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">LuxeLaptop</h3>
+          <a href="{{ route('projects') }}?project=5">
+            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5 group-hover:text-accent transition-colors">LuxeLaptop</h3>
           </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Website bán hàng laptop cao cấp tối giản, viết bằng PHP thuần để hiểu sâu về quản lý cơ sở dữ liệu và cách tối ưu hóa hiệu năng ứng dụng web cơ bản.</p>
-          <a href="{{ route('projects') }}?filter=laravel-php" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Xem chi tiết dự án →</a>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4 line-clamp-3">Website bán hàng laptop cao cấp tối giản, viết bằng PHP thuần để hiểu sâu về quản lý cơ sở dữ liệu và cách tối ưu hóa hiệu năng ứng dụng web cơ bản.</p>
+          <a href="{{ route('projects') }}?project=5" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Xem chi tiết dự án →</a>
         </div>
       </article>
  
@@ -485,7 +485,7 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 <!-- ═══ CONTACT ═══ -->
 <section id="contact" class="py-24">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-16 relative overflow-hidden">
+    <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-6 sm:p-10 md:p-16 relative overflow-hidden">
       <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
       <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
 

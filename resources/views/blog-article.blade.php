@@ -123,15 +123,17 @@
         <p class="text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8">Hành trình xuất sắc của đề tài "Hệ thống nhận diện người và điều khiển thiết bị IoT thông minh" từ nghiên cứu giảng đường đến sân chơi trí tuệ cấp quốc gia Euréka lần thứ XXVII.</p>
 
         <!-- Author -->
-        <div class="flex items-center gap-4 py-6 border-t border-b border-zinc-100 dark:border-zinc-900">
-          <div class="photo-frame w-12 h-12 rounded-full shrink-0">
-            <img src="{{ asset('images/avatar.jpg') }}" alt="Nguyễn Hữu Lực" loading="lazy"/>
+        <div class="flex flex-wrap sm:flex-nowrap items-center gap-4 py-6 border-t border-b border-zinc-100 dark:border-zinc-900 justify-between">
+          <div class="flex items-center gap-4">
+            <div class="photo-frame w-12 h-12 rounded-full shrink-0">
+              <img src="{{ asset('images/avatar.jpg') }}" alt="Nguyễn Hữu Lực" loading="lazy"/>
+            </div>
+            <div>
+              <p class="font-medium text-zinc-900 dark:text-white text-sm">Nguyễn Hữu Lực</p>
+              <p class="text-xs text-zinc-500">Sinh viên Kỹ thuật Phần mềm &amp; Web Developer</p>
+            </div>
           </div>
-          <div>
-            <p class="font-medium text-zinc-900 dark:text-white text-sm">Nguyễn Hữu Lực</p>
-            <p class="text-xs text-zinc-500">Sinh viên Kỹ thuật Phần mềm &amp; Web Developer</p>
-          </div>
-          <div class="ml-auto flex gap-3">
+          <div class="flex gap-3">
             <a href="mailto:huuluc04@gmail.com" class="w-8 h-8 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 text-zinc-500 hover:text-accent hover:border-accent transition-colors" aria-label="Gửi email">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             </a>
