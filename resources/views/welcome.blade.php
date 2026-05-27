@@ -513,32 +513,60 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
         </div>
 
         <div class="reveal d2">
-          <form action="#" method="POST" novalidate>
+          <form x-on:submit.prevent="submitForm()" novalidate>
             <div class="flex flex-col gap-4">
+              
+              <!-- Success Alert -->
+              <div x-show="sent" x-cloak x-transition class="p-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-xl text-sm flex items-start gap-3">
+                <span class="w-5 h-5 shrink-0 rounded-full bg-emerald-500/20 flex items-center justify-center mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <div>
+                  <p class="font-bold">Gửi tin nhắn thành công!</p>
+                  <p class="mt-0.5 font-light">Cảm ơn bạn. Tin nhắn đã được gửi và chuyển tiếp trực tiếp đến email của Lực. Mình sẽ phản hồi lại bạn sớm nhất có thể!</p>
+                </div>
+              </div>
+
+              <!-- Error Alert -->
+              <div x-show="sendError" x-cloak x-transition class="p-4 bg-rose-500/10 border border-rose-500/20 text-rose-400 rounded-xl text-sm flex items-start gap-3">
+                <span class="w-5 h-5 shrink-0 rounded-full bg-rose-500/20 flex items-center justify-center mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <div>
+                  <p class="font-bold">Có lỗi xảy ra!</p>
+                  <p class="mt-0.5 font-light">Không thể gửi tin nhắn lúc này. Vui lòng thử lại hoặc gửi thư trực tiếp về <a href="mailto:huuluc04@gmail.com" class="underline font-medium">huuluc04@gmail.com</a>.</p>
+                </div>
+              </div>
+
               <div class="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label for="fname" class="block text-xs font-medium text-zinc-400 mb-1.5">Họ và tên <span aria-hidden="true">*</span></label>
-                  <input type="text" id="fname" name="name" placeholder="Nguyễn Văn A" required autocomplete="name"
+                  <input type="text" id="fname" name="name" placeholder="Nguyễn Văn A" required autocomplete="name" x-model="formData.name"
                     class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors">
                 </div>
                 <div>
                   <label for="femail" class="block text-xs font-medium text-zinc-400 mb-1.5">Email <span aria-hidden="true">*</span></label>
-                  <input type="email" id="femail" name="email" placeholder="example@domain.com" required autocomplete="email"
+                  <input type="email" id="femail" name="email" placeholder="example@domain.com" required autocomplete="email" x-model="formData.email"
                     class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors">
                 </div>
               </div>
               <div>
                 <label for="fsubject" class="block text-xs font-medium text-zinc-400 mb-1.5">Tiêu đề</label>
-                <input type="text" id="fsubject" name="subject" placeholder="Cơ hội hợp tác / Dự án"
+                <input type="text" id="fsubject" name="subject" placeholder="Cơ hội hợp tác / Dự án" x-model="formData.subject"
                   class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors">
               </div>
               <div>
                 <label for="fmessage" class="block text-xs font-medium text-zinc-400 mb-1.5">Lời nhắn <span aria-hidden="true">*</span></label>
-                <textarea id="fmessage" name="message" rows="4" placeholder="Nhập lời nhắn của bạn ở đây..." required
+                <textarea id="fmessage" name="message" rows="4" placeholder="Nhập lời nhắn của bạn ở đây..." required x-model="formData.message"
                   class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors resize-none"></textarea>
               </div>
-              <button type="submit" class="shimmer w-full bg-accent text-white font-display font-bold text-sm py-3.5 rounded-xl hover:bg-accent-light transition-colors">
-                Gửi tin nhắn →
+              <button type="submit" :disabled="sending" class="shimmer w-full bg-accent text-white font-display font-bold text-sm py-3.5 rounded-xl hover:bg-accent-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                <span x-show="!sending">Gửi tin nhắn →</span>
+                <span x-show="sending">Đang gửi tin nhắn...</span>
               </button>
             </div>
           </form>
@@ -570,6 +598,15 @@ function app() {
     mm: false,
     sc: false,
     s: 'hero',
+    sending: false,
+    sent: false,
+    sendError: false,
+    formData: {
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    },
 
     init() {
       // dark mode
@@ -600,6 +637,43 @@ function app() {
       for (const id of ids) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 130) { this.s = id; return; }
+      }
+    },
+
+    async submitForm() {
+      if (!this.formData.name || !this.formData.email || !this.formData.message) {
+        alert('Vui lòng điền đầy đủ các thông tin bắt buộc (*)');
+        return;
+      }
+      this.sending = true;
+      this.sent = false;
+      this.sendError = false;
+      
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/huuluc04@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: this.formData.name,
+            email: this.formData.email,
+            _subject: this.formData.subject || 'Liên hệ mới từ Portfolio',
+            message: this.formData.message
+          })
+        });
+        
+        if (response.ok) {
+          this.sent = true;
+          this.formData = { name: '', email: '', subject: '', message: '' };
+        } else {
+          this.sendError = true;
+        }
+      } catch (e) {
+        this.sendError = true;
+      } finally {
+        this.sending = false;
       }
     }
   }
