@@ -7,6 +7,22 @@
       "runtime": "vercel-php@0.9.0"
     }
   },
+  "env": {
+    "APP_KEY": "base64:ewd+TW1h/Hlosv761WHoK6UFMuiTZ0vqwXm63uTI06M=",
+    "APP_ENV": "production",
+    "APP_DEBUG": "true",
+    "DB_CONNECTION": "sqlite",
+    "DB_DATABASE": ":memory:",
+    "APP_CONFIG_CACHE": "/tmp/config.php",
+    "APP_EVENTS_CACHE": "/tmp/events.php",
+    "APP_PACKAGES_CACHE": "/tmp/packages.php",
+    "APP_ROUTES_CACHE": "/tmp/routes.php",
+    "APP_SERVICES_CACHE": "/tmp/services.php",
+    "VIEW_COMPILED_PATH": "/tmp",
+    "CACHE_DRIVER": "array",
+    "LOG_CHANNEL": "stderr",
+    "SESSION_DRIVER": "cookie"
+  },
   "routes": [
     {
       "src": "/build/(.*)",
